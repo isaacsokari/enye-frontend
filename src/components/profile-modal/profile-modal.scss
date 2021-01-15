@@ -1,0 +1,109 @@
+.modalBackground {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 99;
+}
+
+.profileModal {
+  height: max-content;
+  width: 90%;
+  max-width: 40rem;
+  align-self: center;
+  position: relative;
+  margin: 2rem 0;
+  padding: 2rem 3rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+  z-index: 100;
+
+  @media (max-width: 592px) {
+    padding: 2rem;
+    width: 90%;
+  }
+
+  #closeModalBtn {
+    border: 0;
+    height: max-content;
+    width: max-content;
+    cursor: pointer;
+    background-color: transparent;
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+
+    @media (max-width: 592px) {
+      right: 1.5rem;
+      top: 1.5rem;
+    }
+
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+
+  h2 {
+    margin-bottom: 1rem;
+    font-weight: 400;
+
+    @media (max-width: 592px) {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  h3 {
+    margin-bottom: 1rem;
+    font-weight: 400;
+
+    @media (max-width: 592px) {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  p {
+    max-width: 100%;
+    font-size: 14px;
+    margin: 0.5rem 0;
+    margin: 0.5rem 0 0 5rem;
+    overflow: hidden;
+    word-wrap: break-word;
+
+    @media (max-width: 592px) {
+      margin: 0.25rem 0;
+    }
+
+    @media (max-width: 425px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .label {
+    color: rgba(0, 0, 0, 0.6);
+    display: inline-block;
+    min-width: 7rem;
+    margin: 0 1rem 0 0;
+    font-weight: 400;
+    font-size: 12px;
+
+    @media (max-width: 425px) {
+      margin: 0.5rem 0;
+    }
+  }
+
+  .basic-details,
+  .contact-info,
+  .payment-info,
+  .device-info {
+    padding: 1rem 0;
+    border-top: 0.5px solid rgba(0, 0, 0, 0.1);
+
+    @media (max-width: 592px) {
+    }
+  }
+}
