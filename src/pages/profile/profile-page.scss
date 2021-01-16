@@ -1,0 +1,34 @@
+.profile-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  .filters {
+    padding: 1rem;
+
+    input {
+      margin: 1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      border: 1px solid;
+      width: 100%;
+      max-width: 40rem;
+      align-self: center;
+    }
+  }
+  .profile-list {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 100%;
+
+    @media (max-width: 592px) {
+      padding: 0.5rem;
+    }
+
+    h2 {
+      text-align: center;
+    }
+  }
+}
