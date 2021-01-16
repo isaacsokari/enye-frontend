@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
 import ProfileModal from '../../components/profile-modal/profile-modal';
-import ProfilePreviewItem from '../../components/profile-preview/profile-preview';
+import ProfileList from '../../components/profile-list/profile-list';
 
 import './profile-page.scss';
+import DropdownFilter from '../../components/dropdown-filter/dropdown-filter';
 
 const ProfilePage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -52,11 +53,16 @@ const ProfilePage = () => {
     // eslint-disable-next-line
   }, []);
 
-  if (isLoading) return 'Loading...';
+  // if (isLoading) return 'Loading...';
 
   return (
     <>
       <div className="profile-page">
+        <header>
+          <h1>Profile Records</h1>
+          <p>Find All Patients' Records Below</p>
+        </header>
+
         <div className="filters">
           <h2>Filter By:</h2>
 
@@ -68,55 +74,26 @@ const ProfilePage = () => {
             value={filterText}
             onChange={(e) => setFilterText(e.target.value)}
           />
-          <label htmlFor="filterByPaymentMethod">Payment Method:</label>
-          <select
-            name="Payment Methods"
+
+          <DropdownFilter
             id="filterByPaymentMethod"
-            onChange={(e) => setSelectedPaymentMethod(e.target.value)}>
-            <option value="">None</option>
-            {Array.from(paymentMethodsList).map((method, idx) => (
-              <option value={method} key={idx}>
-                {method}
-              </option>
-            ))}
-          </select>
-          <label htmlFor="filterByGender">Gender</label>
-          <select
-            name="gender"
+            label="Payment Method:"
+            onChange={(e) => setSelectedPaymentMethod(e.target.value)}
+            optionsSource={paymentMethodsList}
+          />
+
+          <DropdownFilter
             id="filterByGender"
-            onChange={(e) => setSelectedGender(e.target.value)}>
-            <option value="">None</option>
-            {Array.from(gendersList)
-              .sort()
-              .map((gender, idx) => (
-                <option value={gender} key={idx}>
-                  {gender}
-                </option>
-              ))}
-          </select>
-        </div>
-        <div className="profile-list">
-          <h2>Results: </h2>
-
-          {filteredData.length ? (
-            filteredData.map((profile, idx) => (
-              <ProfilePreviewItem
-                userData={profile}
-                showDetails={() => {
-                  setModalData(profile);
-                  setIsModalOpen(true);
-                }}
-                key={idx}
-              />
-            ))
-          ) : (
-            <p style={{ textAlign: 'center', margin: '2rem' }}>
-              No Results for "{filterText}" Found.
-            </p>
-          )}
+            label="Gender:"
+            onChange={(e) => setSelectedGender(e.target.value)}
+            optionsSource={gendersList}
+          />
         </div>
 
-        {/* Profile Modal */}
+        <ProfileList
+          {...{ filteredData, filterText, setModalData, setIsModalOpen }}
+        />
+
         <ProfileModal
           data={modalData}
           isOpen={isModalOpen}

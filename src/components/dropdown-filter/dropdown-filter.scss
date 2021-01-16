@@ -1,0 +1,35 @@
+.dropdown-filter {
+  display: flex;
+  width: max-content;
+  align-items: center;
+
+  @media screen and (max-width: 592px) {
+    flex-direction: column;
+    align-self: center;
+    align-items: unset;
+  }
+
+  label {
+    margin: 1rem;
+    min-width: 8rem;
+    vertical-align: middle;
+
+    @media screen and (max-width: 592px) {
+      margin: 0rem 0.5rem 0.5rem;
+      vertical-align: unset;
+    }
+  }
+
+  select {
+    margin: 1rem;
+    width: 15rem;
+    max-width: 15rem;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+
+    @media screen and (max-width: 592px) {
+      margin: 0rem 0.5rem 1rem;
+    }
+  }
+}
