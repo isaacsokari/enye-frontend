@@ -26,9 +26,9 @@ const ProfileList = ({
   const profileListRef = useRef(null);
 
   const scrollToTop = () => {
-    setImmediate(() => {
+    setTimeout(() => {
       profileListRef.current.scrollIntoView();
-    });
+    }, 0);
   };
 
   return (
