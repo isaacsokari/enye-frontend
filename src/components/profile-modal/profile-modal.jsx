@@ -75,10 +75,6 @@ const ProfileModal = (props) => {
             {Email}
           </p>
           <p>
-            <span className="label">Username:</span>
-            {UserName}
-          </p>
-          <p>
             <span className="label">URL:</span>
             {URL}
           </p>
