@@ -55,6 +55,9 @@ const ProfilePage = () => {
 
   // if (isLoading) return 'Loading...';
 
+  // for pagination
+  const [currentPage, setCurrentPage] = useState(1);
+
   return (
     <>
       <div className="profile-page">
@@ -64,7 +67,7 @@ const ProfilePage = () => {
         </header>
 
         <div className="filters">
-          <h2>Filter By:</h2>
+          <h2>Filter List</h2>
 
           <label htmlFor="search">Name:</label>
           <input
@@ -72,30 +75,46 @@ const ProfilePage = () => {
             placeholder="Seach for a specific patient"
             id="search"
             value={filterText}
-            onChange={(e) => setFilterText(e.target.value)}
+            onChange={(e) => {
+              setFilterText(e.target.value);
+              setCurrentPage(1);
+            }}
           />
 
           <DropdownFilter
             id="filterByPaymentMethod"
             label="Payment Method:"
-            onChange={(e) => setSelectedPaymentMethod(e.target.value)}
+            onChange={(e) => {
+              setSelectedPaymentMethod(e.target.value);
+              setCurrentPage(1);
+            }}
             optionsSource={paymentMethodsList}
           />
 
           <DropdownFilter
             id="filterByGender"
             label="Gender:"
-            onChange={(e) => setSelectedGender(e.target.value)}
+            onChange={(e) => {
+              setSelectedGender(e.target.value);
+              setCurrentPage(1);
+            }}
             optionsSource={gendersList}
           />
         </div>
 
-        {!isLoading ? (
-          <ProfileList
-            {...{ filteredData, filterText, setModalData, setIsModalOpen }}
-          />
-        ) : (
+        {isLoading ? (
           'Loading...'
+        ) : (
+          <ProfileList
+            {...{
+              filteredData,
+              filterText,
+              setModalData,
+              setIsModalOpen,
+              currentPage,
+              setCurrentPage,
+            }}
+          />
         )}
 
         <ProfileModal
