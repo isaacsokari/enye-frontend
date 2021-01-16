@@ -1,0 +1,50 @@
+.profile-preview {
+  display: flex;
+  flex-direction: column;
+  min-width: 17rem;
+  width: 90%;
+  max-width: 40rem;
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  align-self: center;
+  margin: 1rem 0;
+  position: relative;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+  @media (max-width: 592px) {
+    margin: 0.5rem 0;
+  }
+
+  h3 {
+    margin: 0 0 0.5rem 0;
+  }
+
+  p {
+    margin: 0.25rem 0;
+    font-size: 14px;
+
+    .label {
+      display: inline-block;
+      min-width: 4rem;
+      margin: 0 1rem 0 0;
+    }
+  }
+
+  button {
+    padding: 0.5rem 1rem;
+    width: max-content;
+    border-radius: 6px;
+    border: 1px solid;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+
+    @media (max-width: 592px) {
+      position: unset;
+      align-self: center;
+      width: 100%;
+      margin: 0.5rem;
+    }
+  }
+}
