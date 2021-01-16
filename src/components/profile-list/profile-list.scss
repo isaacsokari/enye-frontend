@@ -4,8 +4,10 @@
   padding: 1rem;
   width: 100%;
   max-width: 45rem;
+  min-height: max-content;
 
   @media (max-width: 592px) {
+    margin: 0 0 2rem;
     padding: 0;
   }
 

@@ -14,7 +14,9 @@
     & + button {
       margin: 0 0 0 1rem;
     }
-    @media screen and (max-width: 592px) {
-    }
+  }
+
+  @media screen and (max-width: 592px) {
+    margin: 1rem;
   }
 }

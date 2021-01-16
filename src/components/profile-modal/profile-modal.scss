@@ -10,16 +10,21 @@
 
 .profileModal {
   height: max-content;
+  max-height: 80vh;
   width: 90%;
   max-width: 40rem;
   align-self: center;
   position: relative;
-  margin: 2rem 0;
   padding: 2rem 3rem;
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
   z-index: 100;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden auto;
 
   @media (max-width: 592px) {
     padding: 2rem;
