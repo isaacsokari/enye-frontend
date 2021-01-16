@@ -90,9 +90,13 @@ const ProfilePage = () => {
           />
         </div>
 
-        <ProfileList
-          {...{ filteredData, filterText, setModalData, setIsModalOpen }}
-        />
+        {!isLoading ? (
+          <ProfileList
+            {...{ filteredData, filterText, setModalData, setIsModalOpen }}
+          />
+        ) : (
+          'Loading...'
+        )}
 
         <ProfileModal
           data={modalData}
