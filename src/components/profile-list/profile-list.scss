@@ -3,19 +3,20 @@
   flex-direction: column;
   padding: 1rem;
   width: 100%;
+  min-width: 18rem;
   max-width: 45rem;
   min-height: max-content;
 
   @media (max-width: 592px) {
     margin: 0 0 2rem;
-    padding: 0;
+    padding: 1rem;
   }
 
   h2 {
     margin: 0 0 1rem;
   }
 
-  p {
+  & > p {
     margin: 0 0 1rem;
   }
 }
