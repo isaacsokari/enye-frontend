@@ -1,20 +1,24 @@
 .dropdown-filter {
   display: flex;
-  width: max-content;
-  align-items: center;
+  min-width: max-content;
+  width: 90%;
+  // align-items: center;
+  flex-direction: column;
 
   @media screen and (max-width: 592px) {
-    flex-direction: column;
     align-self: center;
     align-items: unset;
+    width: 100%;
+    flex-direction: column;
   }
 
   label {
-    margin: 1rem;
+    margin: 0 1rem;
     min-width: 8rem;
     vertical-align: middle;
 
     @media screen and (max-width: 592px) {
+      display: block;
       margin: 0rem 0.5rem 0.5rem;
       vertical-align: unset;
     }
@@ -22,14 +26,16 @@
 
   select {
     margin: 1rem;
-    width: 15rem;
-    max-width: 15rem;
+    min-width: 15rem;
+    // max-width: 15rem;
     padding: 0.5rem 1rem;
     border-radius: 6px;
     border: 1px solid rgba(0, 0, 0, 0.5);
-
+    
     @media screen and (max-width: 592px) {
       margin: 0rem 0.5rem 1rem;
+      width: 90%;
+      align-self: center;
     }
   }
 }

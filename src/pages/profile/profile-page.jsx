@@ -11,7 +11,6 @@ const ProfilePage = () => {
   const [modalData, setModalData] = useState({});
   const [filterText, setFilterText] = useState('');
   const [profiles, setProfiles] = useState([]);
-  // eslint-disable-next-line
   const [isLoading, setIsLoading] = useState(true);
 
   const [paymentMethodsList, setPaymentMethodsList] = useState(new Set());
@@ -53,8 +52,6 @@ const ProfilePage = () => {
     // eslint-disable-next-line
   }, []);
 
-  // if (isLoading) return 'Loading...';
-
   // for pagination
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -69,17 +66,19 @@ const ProfilePage = () => {
         <div className="filters">
           <h2>Filter List</h2>
 
-          <label htmlFor="search">Name:</label>
-          <input
-            type="text"
-            placeholder="Seach for a specific patient"
-            id="search"
-            value={filterText}
-            onChange={(e) => {
-              setFilterText(e.target.value);
-              setCurrentPage(1);
-            }}
-          />
+          <div className="input-group">
+            <label htmlFor="search">Name:</label>
+            <input
+              type="text"
+              placeholder="Seach for a specific patient"
+              id="search"
+              value={filterText}
+              onChange={(e) => {
+                setFilterText(e.target.value);
+                setCurrentPage(1);
+              }}
+            />
+          </div>
 
           <DropdownFilter
             id="filterByPaymentMethod"
