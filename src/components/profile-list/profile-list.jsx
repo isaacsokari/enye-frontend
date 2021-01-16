@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Pagination from '../pagination/pagination';
 
 import ProfilePreviewItem from '../profile-preview/profile-preview';
 
@@ -38,7 +39,9 @@ const ProfileList = ({
       )}
       {filteredData.length ? (
         <>
-          
+          <Pagination
+            {...{ setCurrentPage, currentPage, isFirstPage, isLastPage }}
+          />
           {currentPosts.map((profile, idx) => (
             <ProfilePreviewItem
               userData={profile}
@@ -49,7 +52,9 @@ const ProfileList = ({
               key={idx}
             />
           ))}
-          
+          <Pagination
+            {...{ setCurrentPage, currentPage, isFirstPage, isLastPage }}
+          />
         </>
       ) : (
         <p style={{ textAlign: 'center', margin: '2rem' }}>
