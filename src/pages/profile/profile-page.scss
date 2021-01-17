@@ -54,6 +54,10 @@
     grid-template-columns: repeat(2, 1fr);
     box-shadow: 0 0 4px var(--box-shadow-color);
 
+    @media screen and (min-width: 1023px) {
+      max-width: 60rem;
+    }
+
     @media screen and (max-width: 592px) {
       grid-template-columns: 1fr;
     }

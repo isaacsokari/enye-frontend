@@ -10,6 +10,11 @@
     bottom: unset;
   }
 
+  @media screen and (min-width: 1023px) {
+    right: 1rem;
+    bottom: -3.5rem;
+  }
+
   @media screen and (max-width: 592px) {
     margin: 1rem;
   }

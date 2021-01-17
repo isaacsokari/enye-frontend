@@ -8,6 +8,10 @@
   max-width: 47rem;
   min-height: max-content;
 
+  @media screen and (min-width: 1023px) {
+    max-width: 60rem;
+  }
+
   & > header {
     // grid-column: 1/4;
     h2 {
@@ -32,6 +36,11 @@
     max-width: 100%;
     min-height: max-content;
     justify-items: center;
+
+    @media screen and (min-width: 1023px) {
+      grid-template-columns: repeat(4, 1fr);
+      padding: 0;
+    }
 
     @media screen and (max-width: 768px) {
       grid-template-columns: repeat(2, 1fr);
