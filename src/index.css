@@ -14,13 +14,15 @@ body {
 }
 
 :root {
-  --primary-color: #000000;
+  --primary-color: rgb(61, 108, 185);
   --primary-color-muted: #00000090;
   --secondary-color: ;
   --secondary-color-muted: ;
-  --button-text-color: ;
-  --button-bg-color: ;
-  --button-bg-muted: ;
-  --header-bg-color: rgb(255, 255, 255);
-  --box-shadow-color: rgba(0, 0, 0, 0.2);
+  --button-text-color: rgb(253, 253, 253);
+  --button-bg-color: rgba(61, 108, 185, 1);
+  --button-bg-muted: rgba(61, 108, 185, 0.5);
+  --header-bg-color: rgba(61, 108, 185, 1);
+  --header-text-color: rgb(253, 253, 253);
+  --box-shadow-color: rgba(61, 108, 185, 0.3);
+  --form-input-border: 1px solid rgba(61, 108, 185, 0.3);
 }

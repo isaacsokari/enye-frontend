@@ -33,21 +33,24 @@ const ProfileList = ({
 
   return (
     <div className="profile-list" ref={profileListRef}>
-      <h2>Results</h2>
-      {filteredData.length ? (
-        <p>
-          Showing{' '}
-          {`${indexOfFirstPost + 1} - ${
-            isLastPage ? filteredData.length : indexAfterLastPost
-          }`}{' '}
-          of {filteredData.length}
-        </p>
-      ) : (
-        ''
-      )}
+      <header>
+        <h2>Results</h2>
+        {filteredData.length ? (
+          <p>
+            Showing{' '}
+            {`${indexOfFirstPost + 1} - ${
+              isLastPage ? filteredData.length : indexAfterLastPost
+            }`}{' '}
+            of {filteredData.length}
+          </p>
+        ) : (
+          ''
+        )}
+      </header>
       {filteredData.length ? (
         <>
           <Pagination
+            className="top"
             {...{
               setCurrentPage,
               currentPage,
@@ -56,16 +59,18 @@ const ProfileList = ({
               scrollToTop,
             }}
           />
-          {currentPosts.map((profile, idx) => (
-            <ProfilePreviewItem
-              userData={profile}
-              showDetails={() => {
-                setModalData(profile);
-                setIsModalOpen(true);
-              }}
-              key={idx}
-            />
-          ))}
+          <div className="results">
+            {currentPosts.map((profile, idx) => (
+              <ProfilePreviewItem
+                userData={profile}
+                showDetails={() => {
+                  setModalData(profile);
+                  setIsModalOpen(true);
+                }}
+                key={idx}
+              />
+            ))}
+          </div>
           <Pagination
             {...{
               setCurrentPage,

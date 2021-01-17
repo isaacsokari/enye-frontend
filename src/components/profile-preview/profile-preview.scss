@@ -1,26 +1,33 @@
 .profile-preview {
   display: flex;
   flex-direction: column;
-  min-width: 15rem;
-  width: 90%;
-  max-width: 40rem;
-  min-height: max-content;
-  padding: 1rem 2rem;
+  min-width: 13rem;
+  width: 100%;
+  max-width: 15rem;
+  // max-height: 100%;
+  height: max-content;
+  min-height: 100%;
+  // height: minmax(auto, 100%);
+  // padding: 1rem 2rem;
+  padding: 1rem;
   border-radius: 4px;
   border: 1px solid rgba(0, 0, 0, 0.4);
   align-self: center;
-  margin: 1rem 0;
+  // align-items: center;
+  // margin: 1rem 0;
   position: relative;
   box-shadow: 0 2px 5px var(--box-shadow-color);
 
-  @media (max-width: 592px) {
-    margin: 0.5rem 0;
+  @media (max-width: 539px) {
+    // margin: 0.5rem 0;
     padding: 1rem 1.5rem;
+    max-width: 40rem;
   }
 
   h3 {
     margin: 0 0 1rem 0;
     font-weight: 500;
+    text-align: center;
   }
 
   p {
@@ -29,19 +36,28 @@
 
     .label {
       display: inline-block;
-      min-width: 5rem;
+      min-width: 4rem;
       margin: 0 1rem 0 0;
+
+      @media screen and (max-width: 300px) {
+        min-width: 4rem;
+      }
     }
   }
 
   button {
     padding: 0.5rem 1rem;
-    width: max-content;
+    min-width: max-content;
+    width: 100%;
     border-radius: 6px;
     border: 1px solid;
-    position: absolute;
-    top: 1rem;
-    right: 2rem;
+    align-self: center;
+    // position: absolute;
+    // top: 1rem;
+    // right: 2rem;
+    margin: 1rem;
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
 
     @media (max-width: 592px) {
       position: unset;

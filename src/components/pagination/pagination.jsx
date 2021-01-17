@@ -8,9 +8,10 @@ const Pagination = ({
   isLastPage,
   isFirstPage,
   scrollToTop,
+  className,
 }) => {
   return (
-    <div className="pagination">
+    <div className={`pagination ${className ? className : ''}`}>
       <button
         onClick={() => {
           setCurrentPage(currentPage - 1);
