@@ -95,16 +95,30 @@ const ProfileModal = (props) => {
           </p>
         </div>
         <div className="device-info">
-          <h3>Payment Information</h3>
+          <h3>Device Information</h3>
           <p>
             <span className="label">MAC Address:</span>
             {MacAddress}
           </p>
           <p>
             <span className="label">Location:</span>
-            {Latitude},{Longitude}
+            <small>Latitude: {Latitude},</small>
+            <small>Longitude: {Longitude}</small>
+            <iframe
+              title="map"
+              src={`https://maps.google.com/maps?q=${Latitude},${Longitude}&z=10&output=embed`}
+              frameborder="0"
+              style={{
+                border: 0,
+                width: '100%',
+                height: '10rem',
+                alignSelf: 'center',
+                margin: '1rem 0',
+              }}
+              allowfullscreen=""
+              aria-hidden="false"
+              tabindex="0"></iframe>
           </p>
-          {/* <p><span className="label"></span></p> */}
         </div>
       </div>
     </>,
