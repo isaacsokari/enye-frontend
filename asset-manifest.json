@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/enye-frontend/static/css/main.f07b672e.chunk.css",
+    "main.css": "/enye-frontend/static/css/main.768176b1.chunk.css",
     "main.js": "/enye-frontend/static/js/main.9527a3c9.chunk.js",
     "main.js.map": "/enye-frontend/static/js/main.9527a3c9.chunk.js.map",
     "runtime-main.js": "/enye-frontend/static/js/runtime-main.29660a88.js",
@@ -10,13 +10,13 @@
     "static/js/3.81a9db53.chunk.js": "/enye-frontend/static/js/3.81a9db53.chunk.js",
     "static/js/3.81a9db53.chunk.js.map": "/enye-frontend/static/js/3.81a9db53.chunk.js.map",
     "index.html": "/enye-frontend/index.html",
-    "static/css/main.f07b672e.chunk.css.map": "/enye-frontend/static/css/main.f07b672e.chunk.css.map",
+    "static/css/main.768176b1.chunk.css.map": "/enye-frontend/static/css/main.768176b1.chunk.css.map",
     "static/js/2.f3f56414.chunk.js.LICENSE.txt": "/enye-frontend/static/js/2.f3f56414.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.29660a88.js",
     "static/js/2.f3f56414.chunk.js",
-    "static/css/main.f07b672e.chunk.css",
+    "static/css/main.768176b1.chunk.css",
     "static/js/main.9527a3c9.chunk.js"
   ]
 }
