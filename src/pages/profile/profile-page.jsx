@@ -63,57 +63,61 @@ const ProfilePage = () => {
           <p>Find All Patients' Records Below</p>
         </header>
 
-        <div className="filters">
-          <h2>Filter List</h2>
+        {isLoading ? (
+          <div className="spinner-container">
+            <div className="nb-spinner"></div>
+          </div>
+        ) : (
+          <>
+            <div className="filters">
+              <h2>Filter List</h2>
 
-          <div className="input-group">
-            <label htmlFor="search">Name:</label>
-            <input
-              type="text"
-              placeholder="Seach for a specific patient"
-              id="search"
-              value={filterText}
-              onChange={(e) => {
-                setFilterText(e.target.value);
-                setCurrentPage(1);
+              <div className="input-group">
+                <label htmlFor="search">Name:</label>
+                <input
+                  type="text"
+                  placeholder="Seach for a specific patient"
+                  id="search"
+                  value={filterText}
+                  onChange={(e) => {
+                    setFilterText(e.target.value);
+                    setCurrentPage(1);
+                  }}
+                />
+              </div>
+
+              <DropdownFilter
+                id="filterByPaymentMethod"
+                label="Payment Method:"
+                onChange={(e) => {
+                  setSelectedPaymentMethod(e.target.value);
+                  setCurrentPage(1);
+                }}
+                optionsSource={paymentMethodsList}
+              />
+
+              <DropdownFilter
+                id="filterByGender"
+                label="Gender:"
+                onChange={(e) => {
+                  setSelectedGender(e.target.value);
+                  setCurrentPage(1);
+                }}
+                optionsSource={gendersList}
+              />
+            </div>
+
+            <ProfileList
+              {...{
+                filteredData,
+                filterText,
+                setModalData,
+                setIsModalOpen,
+                currentPage,
+                setCurrentPage,
               }}
             />
-          </div>
-
-          <DropdownFilter
-            id="filterByPaymentMethod"
-            label="Payment Method:"
-            onChange={(e) => {
-              setSelectedPaymentMethod(e.target.value);
-              setCurrentPage(1);
-            }}
-            optionsSource={paymentMethodsList}
-          />
-
-          <DropdownFilter
-            id="filterByGender"
-            label="Gender:"
-            onChange={(e) => {
-              setSelectedGender(e.target.value);
-              setCurrentPage(1);
-            }}
-            optionsSource={gendersList}
-          />
-        </div>
-
-        {isLoading ? (
-          'Loading...'
-        ) : (
-          <ProfileList
-            {...{
-              filteredData,
-              filterText,
-              setModalData,
-              setIsModalOpen,
-              currentPage,
-              setCurrentPage,
-            }}
-          />
+          </>
         )}
 
         <ProfileModal

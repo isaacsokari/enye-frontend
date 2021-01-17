@@ -3,11 +3,11 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 3rem 2rem 2rem;
+  padding: 0 0 2rem;
   min-height: max-content;
 
   @media screen and (max-width: 592px) {
-    padding: 2rem 1rem;
+    padding: 0 0 2rem;
   }
 
   & > header {
@@ -15,6 +15,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 6rem 0;
+    background-color: var(--header-bg-color);
 
     @media screen and (max-width: 592px) {
       // align-items: unset;
@@ -23,6 +25,7 @@
     h1 {
       margin: 0 1rem 1rem;
       text-align: unset;
+      font-weight: 500;
 
       @media screen and (max-width: 592px) {
         margin: 0 0 1rem;
@@ -41,22 +44,23 @@
 
   .filters {
     padding: 1rem;
+    margin: 2rem 1rem;
     width: 100%;
     min-width: max-content;
     max-width: 45rem;
-    // display: flex;
-    // flex-direction: column;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    box-shadow: 0 0 4px var(--box-shadow-color);
 
     @media screen and (max-width: 592px) {
       grid-template-columns: 1fr;
-      padding: 1rem 0;
+      // padding: 1rem 0;
     }
 
     h2 {
       margin: 0 0 1rem;
       grid-column: 1/3;
+      font-weight: 500;
 
       @media screen and (max-width: 592px) {
         grid-column: 1/2;
@@ -98,4 +102,42 @@
       }
     }
   }
+
+  .spinner-container {
+    margin-top: 5rem;
+
+    .nb-spinner {
+      width: 75px;
+      height: 75px;
+      margin: 0;
+      background: transparent;
+      border-top: 4px solid var(--primary-color);
+      border-right: 4px solid transparent;
+      border-radius: 50%;
+      -webkit-animation: 1s spin linear infinite;
+      animation: 1s spin linear infinite;
+    }
+  
+    @-webkit-keyframes spin {
+      from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+      to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+  
+    @keyframes spin {
+      from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+      to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+  } 
 }
