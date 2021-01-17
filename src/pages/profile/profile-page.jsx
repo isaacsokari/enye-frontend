@@ -59,8 +59,8 @@ const ProfilePage = () => {
     <>
       <div className="profile-page">
         <header>
-          <h1>Profile Records</h1>
-          <p>Find All Patients' Records Below</p>
+          <h1>Profiles</h1>
+          <p>Search for the Patient's Profile Below</p>
         </header>
 
         {isLoading ? (
