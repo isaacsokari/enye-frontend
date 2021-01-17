@@ -4,22 +4,16 @@
   min-width: 13rem;
   width: 100%;
   max-width: 15rem;
-  // max-height: 100%;
   height: max-content;
   min-height: 100%;
-  // height: minmax(auto, 100%);
-  // padding: 1rem 2rem;
   padding: 1rem;
   border-radius: 4px;
   border: none;
   align-self: center;
-  // align-items: center;
-  // margin: 1rem 0;
   position: relative;
   box-shadow: 0 2px 5px var(--box-shadow-color);
 
   @media (max-width: 539px) {
-    // margin: 0.5rem 0;
     padding: 1rem 1.5rem;
     max-width: 40rem;
   }
@@ -52,9 +46,6 @@
     border-radius: 6px;
     border: 1px solid;
     align-self: center;
-    // position: absolute;
-    // top: 1rem;
-    // right: 2rem;
     margin: 1rem;
     background-color: var(--button-bg-color);
     color: var(--button-text-color);

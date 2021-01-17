@@ -6,10 +6,6 @@
   padding: 0 0 3rem;
   min-height: max-content;
 
-  // @media screen and (max-width: 592px) {
-  //   padding: 0 0 2rem;
-  // }
-
   & > header {
     width: 100%;
     display: flex;
@@ -21,7 +17,6 @@
     margin: 0 0 1rem;
 
     @media screen and (max-width: 592px) {
-      // align-items: unset;
     }
 
     h1 {
@@ -97,12 +92,9 @@
         border: var(--form-input-border);
         min-width: 90%;
         max-width: 100%;
-        // max-width: 40rem;
-        // min-width: 15rem;
 
         @media screen and (max-width: 592px) {
           align-self: center;
-          // margin: 0rem 0.5rem 0.5rem;
         }
       }
     }
