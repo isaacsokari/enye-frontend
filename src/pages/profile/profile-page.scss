@@ -17,7 +17,7 @@
     align-items: center;
 
     @media screen and (max-width: 592px) {
-      align-items: unset;
+      // align-items: unset;
     }
 
     h1 {
@@ -51,6 +51,7 @@
 
     @media screen and (max-width: 592px) {
       grid-template-columns: 1fr;
+      padding: 1rem 0;
     }
 
     h2 {
@@ -85,10 +86,11 @@
         padding: 0.5rem 1rem;
         border-radius: 6px;
         border: 1px solid;
-        width: 90%;
-        max-width: 40rem;
-        min-width: 15rem;
-        
+        min-width: 90%;
+        max-width: 100%;
+        // max-width: 40rem;
+        // min-width: 15rem;
+
         @media screen and (max-width: 592px) {
           align-self: center;
           // margin: 0rem 0.5rem 0.5rem;
